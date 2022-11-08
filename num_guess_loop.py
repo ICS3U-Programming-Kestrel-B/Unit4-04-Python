@@ -7,8 +7,8 @@
 # their number is the same as the
 # computer-generated answer
 
-import math
 import random
+import math
 
 
 def main():
@@ -21,25 +21,30 @@ def main():
 
     # input
     # generating correct_num
-    import random
     correct_num = random.randint(0, 9)
 
     # starting while loop
     while True:
         # getting user_num_string
         user_num_string = input("Enter a number (0-9): ")
-            # process
+        # process
         # checking that user_num_string is an integer
         try:
             user_num_int = int(user_num_string)
-
             if user_num_int >= 0 and user_num_int <= 9:
-                # If they guessed correctly
                 if user_num_int == correct_num:
-                    print("You guessed correctly!");
+                    # If they guessed correctly
+                    print("You guessed correctly!")
                     break
+                else:
+                    # if they guessed incorrectly
+                    print(
+                        ("You guessed incorrectly. The correct number was {}.").format(
+                            correct_num
+                        )
+                    )
             else:
-                print("Please enter a positive, whole integer.")
+                print("Please enter a whole number from 0-9.")
         except ValueError:
             print("Please enter a valid integer.")
         finally:
